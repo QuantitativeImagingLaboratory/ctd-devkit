@@ -180,7 +180,7 @@ def main():
     parser.add_argument('--checkpoint_path', default='train/resnet50/resnet50_model_wts_538.pth',
                         type=str, help='ckpt path')
     parser.add_argument('--train_data', default='./resnet50', type=str, help='Training data path')
-    parser.add_argument('--train_dir', default='./resnet50', type=str, help='ckpt path')
+    parser.add_argument('--train_dir', default='/train', type=str, help='ckpt path')
     parser.add_argument('--log_dir', default='./logs/resnet50', type=str, help='log path')
     parser.add_argument('--decay_rate', default=0.5, type=float, help='learning rate decay')
     parser.add_argument('--decay_milestones', default='10,15', type=str, help='lr decay policy')
@@ -204,7 +204,7 @@ def main():
     retrain = args.retrain
     val_batch_size = 4
     train_data = args.train_data
-    train_dir = os.path.join("train",arch)
+    train_dir = os.path.join(args.train_dir,arch)
     log_dir = os.path.join("logs", arch)
     ending_lr = 1e-5  # The minimal learning rate during training
     cur_lr = learning_rate
@@ -239,7 +239,7 @@ def main():
             if cur_lr > ending_lr:
                 adjust_lr(optimizer, args.decay_rate)
 
-        dataset = SceneDataset(batch_size=args.batch_size,
+        dataset = SceneDataset(train_data, batch_size=args.batch_size,
                                val_batch_size=val_batch_size,
                                img_size=args.img_size)
 

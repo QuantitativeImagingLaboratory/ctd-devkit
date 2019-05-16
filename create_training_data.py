@@ -11,7 +11,7 @@ def create_data(input_folder, output_folder):
 
 
     for k in range(len(annotations['frame'])):
-        if k/len(annotations['frame']) * 100 % 5 == 0:
+        if k/len(annotations['frame']) * 100 % 2 == 0:
             print("%s Done" % str(k/len(annotations['frame']) * 100 ))
         frame_name = os.path.join(input_image_folder,str(annotations['frame'][k])+".jpg")
 
@@ -28,7 +28,6 @@ def create_data(input_folder, output_folder):
         while fileexists:
             if os.path.isfile(destination):
                 destination = os.path.join(os.path.join(destination_folder,str(annotations['tamper'][k])), str(annotations['frame'][k])+"_"+str(i)+".jpg")
-                print(destination)
                 i += 1
             else:
                 fileexists = False
