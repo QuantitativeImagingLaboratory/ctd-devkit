@@ -10,11 +10,10 @@ IMG_EXTENSIONS = [
 ]
 
 
-
 class SceneDataset(Dataset):
-    def __init__(self, over_sample=[], batch_size=64, val_batch_size=16, img_size=224, is_train=True):
-        self.train_path = '/home/pmantini/Desktop/dataset_tampering_eval1/train'
-        self.val_path = '/home/pmantini/Desktop/dataset_tampering_eval1/eval'
+    def __init__(self, data_path, over_sample=[], batch_size=64, val_batch_size=16, img_size=224, is_train=True):
+        self.train_path = os.path.join(data_path,'train')
+        self.val_path = os.path.join(data_path,'eval')
         self.batch_size = batch_size
         self.val_batch_size = val_batch_size
         self.img_size = img_size

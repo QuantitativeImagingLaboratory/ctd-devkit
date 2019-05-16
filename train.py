@@ -179,6 +179,7 @@ def main():
     parser.add_argument('--learning_rate', default=0.0003, type=float, help='learning rate,default is 3e-4')
     parser.add_argument('--checkpoint_path', default='train/resnet50/resnet50_model_wts_538.pth',
                         type=str, help='ckpt path')
+    parser.add_argument('--train_data', default='./resnet50', type=str, help='Training data path')
     parser.add_argument('--train_dir', default='./resnet50', type=str, help='ckpt path')
     parser.add_argument('--log_dir', default='./logs/resnet50', type=str, help='log path')
     parser.add_argument('--decay_rate', default=0.5, type=float, help='learning rate decay')
@@ -202,6 +203,7 @@ def main():
     checkpoint_path = args.checkpoint_path
     retrain = args.retrain
     val_batch_size = 4
+    train_data = args.train_data
     train_dir = os.path.join("train",arch)
     log_dir = os.path.join("logs", arch)
     ending_lr = 1e-5  # The minimal learning rate during training
