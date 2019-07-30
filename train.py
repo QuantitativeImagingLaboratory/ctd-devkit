@@ -1,3 +1,5 @@
+#Code taken from https://github.com/buptchan/scene-classification/blob/master/train.py
+
 import logging
 import argparse
 import os
