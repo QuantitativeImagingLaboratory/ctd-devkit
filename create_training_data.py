@@ -5,7 +5,6 @@ import argparse
 import random
 
 def create_data(input_folder, output_folder):
-    #read annotation file
     input_image_folder = os.path.join(input_folder,"images")
     annotations = pd.read_csv(os.path.join(input_folder,"annotations.csv"))
 
@@ -22,7 +21,7 @@ def create_data(input_folder, output_folder):
 
         destination =  os.path.join(os.path.join(destination_folder,str(annotations['tamper'][k])), str(annotations['frame'][k])+".jpg")
 
-        #check if file exist
+
         fileexists = True
         i = 0
         while fileexists:

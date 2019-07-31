@@ -66,7 +66,7 @@ def get_dataset(video_file):
 
 def main():
     parser = argparse.ArgumentParser(description='PyTorch Training')
-    parser.add_argument('--weights', type=str, help='Optimizer, SGD/Adam')
+    parser.add_argument('--weights', type=str, help='Weights file')
     parser.add_argument('--video_file', type=str, help='Video file to predict')
     parser.add_argument('--output_file', default='output.csv', type=str, help='Output file')
 
