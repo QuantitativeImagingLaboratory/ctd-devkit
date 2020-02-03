@@ -22,7 +22,7 @@ camera). We define four classes
 3. Defocussed
 4. Moved
 
-The dataset is available for [download](qil.uh.edu/datasets) here.
+The dataset is available for [download](http://qil.uh.edu/datasets) here.
 
 The dataset consist of images and vidoes from 2 camera (A and B). Each camera has three folder
 1. Training images: Contians a unifrom distribution of normal, coverd, defocussed, and moved image intended for training
