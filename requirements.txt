@@ -7,7 +7,7 @@ html5lib==0.9999999
 Markdown==3.1
 numpy==1.16.3
 pandas==0.24.2
-Pillow==6.0.0
+Pillow==8.1.1
 protobuf==3.7.1
 python-dateutil==2.8.0
 pytz==2019.1
